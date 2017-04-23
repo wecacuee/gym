@@ -7,9 +7,11 @@ import gym
 from gym import envs, spaces
 from gym.envs.tests.spec_list import spec_list
 
+import sys
+print("[testing_determinism] SPECLIST: {}".format(spec_list), file=sys.stderr)
 @pytest.mark.parametrize("spec", spec_list)
 def test_env(spec):
-
+    print("[testing_determinism] RUNNING: {}".format(spec), file=sys.stderr)
     # Note that this precludes running this test in multiple
     # threads. However, we probably already can't do multithreading
     # due to some environments.
