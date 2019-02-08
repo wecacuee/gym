@@ -24,4 +24,4 @@ class FetchReachActEnv(fetch_env.FetchEnv, utils.EzPickle):
 
     def _set_action(self, action):
         assert action.shape == self.action_space.shape
-        gerutils.ctrl_set_action(self.sim, action)
+        gerutils.full_ctrl_set_action(self.sim, action)
